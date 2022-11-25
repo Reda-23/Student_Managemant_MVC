@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <h1>List Students</h1>
+  </div>
+<table class="table table-striped table-dark">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">First_Name</th>
+    <th scope="col">Last_Name</th>
+    <th scope="col">Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="student:${students}">
+    <td th:text="${student.getId()}"></td>
+    <td th:text="${student.getFirstname()}"></td>
+    <td th:text="${student.getLastname()}"></td>
+    <td th:text="${student.getEmail()}"></td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+</body>
+</html>
